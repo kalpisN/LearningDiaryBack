@@ -19,5 +19,3 @@ artifacts:
     - target/.jar
     - .ebextensions/*/
     - appsepc.yml
-    - apt-get update -y
-      - apt-get install -y maven
