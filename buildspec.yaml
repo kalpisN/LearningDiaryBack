@@ -11,3 +11,8 @@ artifacts:
     - target/learningdiary-0.0.1-SNAPSHOT.jar
     - appspec.yml
   discard-paths: yes
+  eb_codebuild_settings:
+    CodeBuildServiceRole: AWSCodePipelineServiceRole-eu-west-1-nooran-ld-pipeelini
+    ComputeType: BUILD_GENERAL1_SMALL
+    Image: aws/codebuild/standard:2.0
+    Timeout: 60
