@@ -7,7 +7,9 @@ phases:
     commands:
       - echo "Build successfull!"
       - mvn package
-      - mv target/learningdiary-0.0.1-SNAPSHOT.jar
+      - mvn target/learningdiary-0.0.1-SNAPSHOT.jar
 artifacts:
   files:
-    - target/*.jar
+    - target/.jar
+    - .ebextensions/**/
+    - appsepc.yml
