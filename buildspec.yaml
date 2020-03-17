@@ -1,14 +1,15 @@
 version: 0.2
 
 phases:
-  build:
-    commands:
-      - echo Build started on `date`
-      - mvn test
+  install:
+    runtime-versions:
+      java: corretto8
   post_build:
     commands:
-      - echo Build completed on `date`
       - mvn package
+      - mv target/learningdiary-0.0.1-SNAPSHOT.jar
 artifacts:
   files:
-    - target/learningdiary-0.0.1-SNAPSHOT.jar
+    - learningdiary-0.0.1-SNAPSHOT.jar
+    - .ebextensions/**/*
+  base-directory: 'target/learningDiary'
