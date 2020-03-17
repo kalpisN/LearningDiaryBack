@@ -1,15 +1,13 @@
 version: 0.2
-
 phases:
   install:
     runtime-versions:
-      java: corretto8
-  post_build:
-    commands:
-      - mvn package
-      - mv target/learningdiary-0.0.1-SNAPSHOT.jar
+      java: corretto11
+    post_build:
+      commands:
+        - mvn package
 artifacts:
   files:
-    - learningdiary-0.0.1-SNAPSHOT.jar
-    - .ebextensions/**/*
-  base-directory: 'target/learningDiary'
+    - target/learningdiary-0.0.1-SNAPSHOT.jar
+    - appspec.yml
+  discard-paths: yes
