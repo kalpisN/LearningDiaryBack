@@ -3,6 +3,8 @@ package fi.academy;
 
 import javax.persistence.*;
 
+import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.Date;
 
 import static javax.persistence.GenerationType.SEQUENCE;
@@ -30,6 +32,25 @@ public class Topic {
     private Date creationdate;
     @Temporal(TemporalType.TIMESTAMP)
     private Date completiondate;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date alarm;
+    private boolean setAlarm;
+
+    public Date getAlarm() {
+        return alarm;
+    }
+
+    public void setAlarm(Date alarm) {
+        this.alarm = alarm;
+    }
+
+    public boolean isSetAlarm() {
+        return setAlarm;
+    }
+
+    public void setSetAlarm(boolean setAlarm) {
+        this.setAlarm = setAlarm;
+    }
 
     public boolean isComplete() {
         return complete;
